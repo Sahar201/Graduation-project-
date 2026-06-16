@@ -1,0 +1,218 @@
+/* ---------------------- Breathing section ---------------------- */
+
+.breathing {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: 2.5rem 1.5rem 3rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.breathingTitle {
+  font-size: 1.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.breathingSub {
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ---------------------- Filters ---------------------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-bottom: 2.5rem;
+}
+
+.filterBtn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.filterBtn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.filterActive {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.filterActive:hover {
+  color: #fff;
+}
+
+/* ---------------------- Grid ---------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* ---------------------- Video card ---------------------- */
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.thumbWrap {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.thumbWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .thumbWrap img {
+  transform: scale(1.06);
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding-left: 3px;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.card:hover .play {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.duration {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  background: rgba(45, 45, 45, 0.78);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.28rem 0.6rem;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.body {
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tag {
+  align-self: flex-start;
+  background: rgba(212, 168, 83, 0.15);
+  color: var(--color-accent-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.28rem 0.7rem;
+  border-radius: 100px;
+  margin-bottom: 0.7rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.85rem;
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+
+.tip i {
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+/* ---------------------- Empty state ---------------------- */
+
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-text-muted);
+}
+
+.empty i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-border);
+}
+
+/* ---------------------- Responsive ---------------------- */
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

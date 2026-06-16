@@ -1,0 +1,153 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.logoIcon {
+  color: var(--color-primary);
+  font-size: 1.3rem;
+}
+
+.logoAccent {
+  color: var(--color-primary);
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.link {
+  position: relative;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: var(--transition);
+  padding: 0.25rem 0;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition);
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.link.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.link.active::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.greeting i {
+  color: var(--color-primary);
+}
+
+.toggle {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+/* ---------------------- Mobile ---------------------- */
+
+@media (max-width: 900px) {
+  .toggle {
+    display: block;
+  }
+
+  .menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: min(82vw, 320px);
+    height: calc(100vh - 70px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 1.75rem;
+    background: var(--color-card);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(110%);
+    transition: transform 0.35s ease;
+    overflow-y: auto;
+  }
+
+  .menuOpen {
+    transform: translateX(0);
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1.5rem;
+  }
+
+  .greeting {
+    justify-content: center;
+  }
+}

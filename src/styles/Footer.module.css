@@ -1,0 +1,164 @@
+.footer {
+  background: var(--color-text);
+  color: #d8d8d4;
+  margin-top: 4rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 4.75rem 1.5rem 3rem;
+}
+
+/* Nudge the link columns down so their headings sit a little lower,
+   aligned with the brand tagline rather than the logo. */
+.linkCol {
+  padding-top: 0.5rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.logo i {
+  color: var(--color-primary-light);
+}
+
+.accent {
+  color: var(--color-primary-light);
+}
+
+.tagline {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: #b5b5b0;
+  max-width: 340px;
+}
+
+.social {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d8d8d4;
+  transition: var(--transition);
+}
+
+.social a:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.linkCol h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.linkCol ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.linkCol a {
+  font-size: 0.92rem;
+  color: #b5b5b0;
+  transition: var(--transition);
+}
+
+.linkCol a:hover {
+  color: var(--color-primary-light);
+  padding-left: 4px;
+}
+
+.help {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #b5b5b0;
+  max-width: 260px;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0;
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bottom p {
+  font-size: 0.85rem;
+  color: #9a9a96;
+}
+
+.legal {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.legal a {
+  color: #b5b5b0;
+  transition: var(--transition);
+}
+
+.legal a:hover {
+  color: var(--color-primary-light);
+}
+
+.legal span {
+  color: #5f5f5b;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bottomInner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .logo,
+  .social {
+    justify-content: center;
+  }
+  .tagline,
+  .help {
+    max-width: none;
+  }
+}

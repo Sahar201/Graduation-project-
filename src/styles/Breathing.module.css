@@ -1,0 +1,98 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1rem 1rem;
+}
+
+.stage {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #6fb5a9, #4a9b8e);
+  box-shadow: 0 0 40px rgba(74, 155, 142, 0.45);
+  transition-property: transform, background;
+  transition-timing-function: ease-in-out;
+  will-change: transform;
+}
+
+.circle.active {
+  background: radial-gradient(circle at 30% 30%, #8fcabf, #4a9b8e);
+}
+
+.phaseText {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+/* Soft pulsing ripple behind the circle for depth. */
+.ripple {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(74, 155, 142, 0.25);
+  animation: ripple 4s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.instruction {
+  text-align: center;
+  color: var(--color-text-muted);
+  max-width: 420px;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cycleCount {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.cycleCount strong {
+  color: var(--color-primary);
+}
+
+@media (max-width: 480px) {
+  .stage {
+    width: 220px;
+    height: 220px;
+  }
+  .controls {
+    width: 100%;
+    flex-direction: column;
+  }
+}

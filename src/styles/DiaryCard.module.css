@@ -1,0 +1,546 @@
+/* ---------------------- Intro ---------------------- */
+
+.intro {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.75rem;
+}
+
+.intro > p {
+  color: var(--color-text);
+  line-height: 1.7;
+  max-width: 860px;
+  margin-bottom: 1.25rem;
+}
+
+.legendChips {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.legendChips > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.chipsLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-text-muted);
+  margin-right: 0.4rem;
+}
+
+.chip {
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  background: rgba(74, 155, 142, 0.12);
+  color: var(--color-primary-dark);
+}
+
+.chipAlt {
+  background: rgba(139, 127, 209, 0.14);
+  color: #6a5cc0;
+}
+
+/* ---------------------- Week selector ---------------------- */
+
+.weekBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.weekArrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  transition: var(--transition);
+}
+
+.weekArrow:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.weekLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.weekLabel i {
+  color: var(--color-primary);
+}
+
+.thisWeek {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #fff;
+  background: var(--color-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+}
+
+.readOnlyBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: rgba(212, 168, 83, 0.12);
+  border: 1px solid rgba(212, 168, 83, 0.35);
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-accent-dark);
+}
+
+.editBtn:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------- Board / grid ---------------------- */
+
+.board {
+  overflow-x: auto;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.75rem 1.75rem;
+}
+
+.grid {
+  min-width: 880px;
+}
+
+/* Each row shares the same column template so everything lines up. */
+.row {
+  display: grid;
+  grid-template-columns: 190px repeat(7, 1fr);
+  align-items: center;
+}
+
+.row:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.headerRow {
+  position: sticky;
+  top: 0;
+  background: var(--color-card);
+  z-index: 1;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 0.35rem;
+}
+
+.rowLabel {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+
+.dayHead {
+  text-align: center;
+  padding: 0.4rem 0;
+}
+
+.dayHead span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.dayHead small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.today {
+  background: var(--color-primary);
+  color: #fff !important;
+  border-radius: 50%;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.2rem;
+}
+
+/* ---------------------- Section headers ---------------------- */
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.sectionIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.sectionHead h3 {
+  font-size: 1.05rem;
+}
+
+.sectionHead p {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------------------- Emotion dots ---------------------- */
+
+.emotionField {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.removeRow {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  color: var(--color-error);
+  transition: var(--transition);
+}
+
+.removeRow:hover {
+  background: rgba(217, 83, 79, 0.12);
+}
+
+.emotionInput {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.4rem 0.55rem;
+  font-family: inherit;
+  font-size: 0.86rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: var(--transition);
+}
+
+.emotionInput::placeholder {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.emotionInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: #fff;
+}
+
+.emotionInput:disabled {
+  background: transparent;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1.5px solid #cdd5d2;
+  background: transparent;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.dot:hover:not(:disabled) {
+  transform: scale(1.2);
+}
+
+.dotOn {
+  border-color: transparent;
+}
+
+.dotNum {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-left: 2px;
+}
+
+.addRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.6rem 0 0.25rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.addRow:hover {
+  gap: 0.7rem;
+  color: var(--color-primary-dark);
+}
+
+/* ---------------------- Legends ---------------------- */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0.75rem 0 0.5rem;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}
+
+.legendStrong {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.legendDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.faceMini {
+  font-size: 0.95rem;
+}
+
+/* ---------------------- Skills ---------------------- */
+
+.skill {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1.5px solid #cfe3de;
+  background: #f1f8f6;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.skill:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.skillYes {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.skillNo {
+  background: #fdecec;
+  border-color: #e7a9a9;
+  color: #c0564e;
+}
+
+/* ---------------------- Felt faces ---------------------- */
+
+.face {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-border);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.face:hover:not(:disabled) {
+  transform: scale(1.12);
+  border-color: var(--color-primary);
+}
+
+.faceSet {
+  background: #fff;
+}
+
+.faceEmpty {
+  color: #cdd5d2;
+}
+
+/* ---------------------- Save bar ---------------------- */
+
+.saveBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 3rem;
+}
+
+.savedNote {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.savedNote i {
+  color: var(--color-primary);
+}
+
+/* ---------------------- History ---------------------- */
+
+.history {
+  margin-top: 1rem;
+}
+
+.historyTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.historyEmpty {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.historyList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.historyItem {
+  display: flex;
+  align-items: stretch;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.historyItem:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.historyActive {
+  border-color: var(--color-primary);
+  background: rgba(74, 155, 142, 0.06);
+}
+
+.historyView {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: left;
+  transition: var(--transition);
+}
+
+.historyView i:last-child {
+  color: var(--color-primary);
+}
+
+.historyDelete {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  border-left: 1px solid var(--color-border);
+  color: var(--color-error);
+  transition: var(--transition);
+}
+
+.historyDelete:hover {
+  background: rgba(217, 83, 79, 0.12);
+}
+
+.historyRange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.historyRange i {
+  color: var(--color-primary);
+}
+
+/* ---------------------- Responsive ---------------------- */
+
+@media (max-width: 600px) {
+  .intro {
+    padding: 1.5rem;
+  }
+  .weekLabel {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+  }
+  .saveBar .btn {
+    width: 100%;
+  }
+}

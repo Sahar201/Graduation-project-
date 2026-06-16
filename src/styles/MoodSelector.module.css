@@ -1,0 +1,62 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.mood {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  transition: var(--transition);
+}
+
+.circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.mood:hover .circle {
+  transform: translateY(-4px);
+}
+
+.emoji {
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.selected .label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    gap: 0.85rem;
+  }
+  .circle {
+    width: 54px;
+    height: 54px;
+  }
+  .emoji {
+    font-size: 1.4rem;
+  }
+  .label {
+    font-size: 0.78rem;
+  }
+}
